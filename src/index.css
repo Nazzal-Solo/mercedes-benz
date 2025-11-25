@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', sans-serif;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #374151 #000000;
+  }
+
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #000000;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: #374151;
+    border-radius: 4px;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background: #4b5563;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .bg-gradient-radial {
+    background: radial-gradient(ellipse at center, var(--tw-gradient-stops));
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Mercedes-Benz specific animations */
+  .hover-scale {
+    transition: transform 0.3s ease;
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+
+  /* Luxury gradient backgrounds */
+  .luxury-gradient {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+  }
+
+  .metallic-gradient {
+    background: linear-gradient(135deg, #c0c0c0 0%, #e8e8e8 50%, #c0c0c0 100%);
+  }
+}
+
+/* Custom button styles for Mercedes-Benz theme */
+.mercedes-btn-primary {
+  @apply bg-white text-black px-8 py-3 hover:bg-gray-200 transition-all duration-300 font-medium tracking-wide uppercase;
+}
+
+.mercedes-btn-secondary {
+  @apply bg-transparent text-white px-8 py-3 border border-gray-600 hover:border-gray-400 hover:bg-gray-800/30 transition-all duration-300 font-medium tracking-wide uppercase;
+}
+
+/* Enhanced focus states for accessibility */
+.mercedes-btn-primary:focus,
+.mercedes-btn-secondary:focus {
+  @apply outline-none ring-2 ring-white ring-offset-2 ring-offset-black;
+}
+
+/* Smooth transitions for all interactive elements */
+a, button, input, textarea {
+  transition: all 0.3s ease;
+}
+
+/* Mercedes-Benz typography hierarchy */
+.mercedes-heading-xl {
+  @apply text-4xl md:text-6xl font-bold text-white tracking-tight;
+}
+
+.mercedes-heading-lg {
+  @apply text-3xl md:text-4xl font-bold text-white tracking-wide;
+}
+
+.mercedes-heading-md {
+  @apply text-2xl md:text-3xl font-bold text-white tracking-wide;
+}
+
+.mercedes-body-lg {
+  @apply text-xl text-gray-400 leading-relaxed;
+}
+
+.mercedes-body {
+  @apply text-gray-400 leading-relaxed;
+}
+
+/* Galaxy background animations */
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes shooting-star {
+  0% {
+    transform: translateX(-100px) translateY(-100px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100vw) translateY(100vh);
+    opacity: 0;
+  }
+}
+
+.animate-shooting-star {
+  animation: shooting-star 3s linear infinite;
+}
+
+/* Galaxy background styles */
+.galaxy-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.galaxy-star {
+  position: absolute;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+}
